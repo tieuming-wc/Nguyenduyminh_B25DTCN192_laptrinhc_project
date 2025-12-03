@@ -21,23 +21,23 @@ struct Record {
 };
 // ===== Du lieu mau =====
 struct Patient patients[MAX] = {
-    {"BN001", "Nguyen Tien Hung",       "0901123456", 120000, 2, "01/11/2025", },
-    {"BN002", "Nguyen Tri Hung",        "0902456789",  50000, 1, "29/11/2025", },
-    {"BN003", "Nguyen Tuan Hung",       "0912345678", 200000, 3, "16/12/2025", },
-    {"BN004", "Nguyen Viet Hung",       "0938765432",  75000, 1, "25/04/2025", },
-    {"BN005", "Chu Gia Huy",            "0987654321", 310000, 4, "12/06/2025", },
-    {"BN006", "Phung Quang Huy",        "0971122334", 150000, 2, "22/07/2025", },
-    {"BN007", "Dieu Bao Thai Khang",    "0965566778",  90000, 1, "30/07/2025", },
-    {"BN008", "Nguyen Bao Khanh",       "0949988776", 420000, 3, "09/11/2025", },
-    {"BN009", "Nguyen Vo Trung Kien",   "0911998877",  65000, 1, "06/04/2025", },
-    {"BN010", "Ta Thanh Long",          "0923778899", 230000, 2, "04/03/2025", },
-    {"BN011", "Mai Quan Minh",           "0934455667", 170000, 1, "22/04/2025",},
-    {"BN012", "Nguyen Hong Minh",       "0962233445", 280000, 2, "12/05/2025", },
-    {"BN013", "Nguyen Duy Minh",        "0973665544",  95000, 3, "07/01/2025", },
-    {"BN014", "Do Thanh Nga",           "0984123567", 330000, 2, "22/01/2025", },
-    {"BN015", "Nguyen Thi Kim Ngan",    "0908899776",  80000, 1, "04/07/2025", }
+    {"BN001", "Nguyen Tien Hung",       "0901123456", 120000, 2, "01/11/2025", ""},
+    {"BN002", "Nguyen Tri Hung",        "0902456789",  50000, 1, "29/11/2025", ""},
+    {"BN003", "Nguyen Tuan Hung",       "0912345678", 200000, 3, "16/12/2025", ""},
+    {"BN004", "Nguyen Viet Hung",       "0938765432",  75000, 1, "25/04/2025", ""},
+    {"BN005", "Chu Gia Huy",            "0987654321", 310000, 4, "12/06/2025", ""},
+    {"BN006", "Phung Quang Huy",        "0971122334", 150000, 2, "22/07/2025", ""},
+    {"BN007", "Dieu Bao Thai Khang",    "0965566778",  90000, 1, "30/07/2025", ""},
+    {"BN008", "Nguyen Bao Khanh",       "0949988776", 420000, 3, "09/11/2025", ""},
+    {"BN009", "Nguyen Vo Trung Kien",   "0911998877",  65000, 1, "06/04/2025", ""},
+    {"BN010", "Ta Thanh Long",          "0923778899", 230000, 2, "04/03/2025", ""},
+    {"BN011", "Mai Quan Minh",          "0934455667", 170000, 1, "22/04/2025", ""},
+    {"BN012", "Nguyen Hong Minh",       "0962233445", 280000, 2, "12/05/2025", ""},
+    {"BN013", "Nguyen Duy Minh",        "0973665544",  95000, 3, "07/01/2025", ""},
+    {"BN014", "Do Thanh Nga",           "0984123567", 330000, 2, "22/01/2025", ""},
+    {"BN015", "Nguyen Thi Kim Ngan",    "0908899776",  80000, 1, "04/07/2025", ""}
 };
-int count = 15;
+
 struct Record records[MAX] = {
     {"BN001", 1, "01/11/2025"},
     {"BN001", 2, "03/11/2025"},
@@ -69,6 +69,7 @@ struct Record records[MAX] = {
     {"BN014", 2, "24/01/2025"},
     {"BN015", 1, "04/07/2025"}
 };
+int count = 15; 
 int recordCount = 31;
 // ===== khai bao truoc ham =====
 void swapPatients(struct Patient *a, struct Patient *b);
@@ -129,28 +130,28 @@ double inputDoubleNonNegative(){
 }
 
 // ===== Ham chuc nang (giu lai cac void theo yeu cau) =====
-void themBenhNhan() {
+void addPatient() {
     printf("\n>>> Function: Add new patient\n");
 }
-void CapnhatdanhSachBenhNhan() {
+void updatePatientList() {
     printf("\n>>> Function: Update patient information\n");
 }
-void Xuatvien() {
+void dischargePatient() {
     printf("\n>>> Function: Discharge patient\n");
 }
-void Hienthidanhsachbenhnhan() {
+void displayPatientList() {
     printf("\n>>> Function: Display patient list\n");
 }
-void Timkiembenhnhan() {
+void searchPatient() {
     printf("\n>>> Function: Search patient\n");
 }
-void Sapxepdanhsachbenhnhan() {
+void sortPatientList() {
     printf("\n>>> Function: Sort patient list\n");
 }
-void Ghinhankhambenh() {
+void recordMedicalVisit() {
     printf("\n>>> Function: Record medical visit\n");
 }
-void Xemlichsukhambenh() {
+void viewMedicalHistory() {
     printf("\n>>> Function: View medical history\n");
 }
 
@@ -167,16 +168,16 @@ int main() {
     do {
         system("cls");
         printf("\n======================================================\n");
-        printf("|                  HOSPITAL SYSTEM                   |\n");
+        printf("|                  HOSPITAL SYSTEM                    |\n");
         printf("======================================================\n");
         printf("|  1 | Add new patient                                |\n");
         printf("|  2 | Update patient information                     |\n");
         printf("|  3 | Discharge patient                              |\n");
-        printf("|  4 | Display patient list                            |\n");
+        printf("|  4 | Display patient list                           |\n");
         printf("|  5 | Search patient                                 |\n");
         printf("|  6 | Sort patient list                              |\n");
-        printf("|  7 | Record medical visit                            |\n");
-        printf("|  8 | View medical history                            |\n");
+        printf("|  7 | Record medical visit                           |\n");
+        printf("|  8 | View medical history                           |\n");
         printf("|  0 | Exit                                           |\n");
         printf("======================================================\n");
         printf("Enter your choice: ");
@@ -197,7 +198,7 @@ int main() {
 // ===== CASE 1: Them benh nhan =====
         case 1:
             addPatient();
-            if(count >= MAX){
+            if (count >= MAX) {
                 printf("The list is full. Cannot add more patients!\n");
                 system("pause");
                 break;
@@ -466,7 +467,7 @@ int main() {
                     system("cls");
                     printf("\n================== PAGE %d / %d ==================\n", page, pages);
                     printf("-------------------------------------------------------------------------------\n");
-                    printf("| %-3s | %-10s | %-20s | %-10s | %-10s | %-5s | %-11s |\n",
+                    printf("| %-3s | %-10s | %-20s | %-10s | %-10s | %-5s| %-11s |\n",
                            "No","CCCD","Name","Phone","Debt","Visits","Admit Date");
                     int start = (page-1)*10;
                     int end = start + 10;
@@ -686,4 +687,3 @@ int main() {
     } while(choice != 0);
     return 0;
 }
-
